@@ -160,41 +160,46 @@ export default function Index() {
 
       {/* 2. ABOUT */}
       <section id="about" className="relative py-28">
-        <div className="container grid items-center gap-14 lg:grid-cols-2">
-          <div className="relative animate-fade-up" style={{ opacity: 0 }}>
-            {/* Main lounge photo */}
-            <div className="overflow-hidden rounded-[2rem] border border-gold/20 shadow-[0_0_60px_-10px_rgba(0,0,0,0.8)]">
-              <img src={IMG_LOUNGE} alt="Зал ожидания Тай СПА" className="h-[480px] w-full object-cover" />
-              <div className="absolute inset-0 rounded-[2rem] ring-1 ring-inset ring-gold/10" />
+        <div className="container flex flex-col gap-14">
+          {/* Top: photo + text */}
+          <div className="grid items-center gap-14 lg:grid-cols-2">
+            <div className="relative animate-fade-up" style={{ opacity: 0 }}>
+              <div className="overflow-hidden rounded-[2rem] border border-gold/20 shadow-[0_0_60px_-10px_rgba(0,0,0,0.8)]">
+                <img src={IMG_LOUNGE} alt="Зал ожидания Тай СПА" className="h-[480px] w-full object-cover" />
+                <div className="absolute inset-0 rounded-[2rem] ring-1 ring-inset ring-gold/10" />
+              </div>
+              <div className="absolute -top-4 -left-4 hidden rounded-2xl border border-gold/30 bg-card px-5 py-4 sm:block shadow-xl">
+                <p className="font-display text-3xl text-gold">8 лет</p>
+                <p className="text-xs text-muted-foreground">дарим покой</p>
+              </div>
             </div>
-            {/* Small candles detail floating card */}
-            <div className="absolute -bottom-5 -right-4 hidden overflow-hidden rounded-2xl border border-gold/30 shadow-2xl sm:block" style={{ width: 140, height: 140 }}>
-              <img src={IMG_CANDLES_GOLD} alt="Свечи" className="h-full w-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
-            </div>
-            <div className="absolute -top-4 -left-4 hidden rounded-2xl border border-gold/30 bg-card px-5 py-4 sm:block shadow-xl">
-              <p className="font-display text-3xl text-gold">8 лет</p>
-              <p className="text-xs text-muted-foreground">дарим покой</p>
+            <div>
+              <p className="font-body text-sm uppercase tracking-[0.3em] text-gold">О пространстве</p>
+              <h2 className="mt-4 font-display text-4xl font-medium sm:text-5xl">Атмосфера расслабления, аромат уникальных масел и профессионализм</h2>
+              <Ornament />
+              <p className="text-muted-foreground leading-relaxed">
+                «Тай СПА» — это мир полного эмоционального восстановления, скрытый за плотной шторой от городской суеты. Тёплая уютная атмосфера изысканно поддержана тёплым светом, тонкими ароматами, звуком тихой воды — всё это окутает вас и погрузит в сладкую негу. Здесь нет спешки — только ваше тело и руки мастера.
+              </p>
+              <p className="mt-4 text-muted-foreground leading-relaxed">
+                Все элементы декора выполнены вручную: настоящие тайские скульптуры, резьба по дереву, шёлковые подушки и портьеры с изысканной вышивкой. «Тай СПА» — это место, куда приходят, чтобы выдохнуть.
+              </p>
             </div>
           </div>
-          <div>
-            <p className="font-body text-sm uppercase tracking-[0.3em] text-gold">О пространстве</p>
-            <h2 className="mt-4 font-display text-4xl font-medium sm:text-5xl">Атмосфера расслабления, аромат уникальных масел и профессионализм</h2>
-            <Ornament />
-            <p className="text-muted-foreground leading-relaxed">
-              «Тай СПА» — это мир полного эмоционального восстановления, скрытый за плотной шторой от городской суеты. Тёплая уютная атмосфера изысканно поддержана тёплым светом, тонкими ароматами, звуком тихой воды — всё это окутает вас и погрузит в сладкую негу. Здесь нет спешки — только ваше тело и руки мастера.
-            </p>
-            <p className="mt-4 text-muted-foreground leading-relaxed">
-              Все элементы декора выполнены вручную: настоящие тайские скульптуры, резьба по дереву, шёлковые подушки и портьеры с изысканной вышивкой. «Тай СПА» — это место, куда приходят, чтобы выдохнуть.
-            </p>
-            {/* Three detail thumbnails */}
-            <div className="mt-8 grid grid-cols-3 gap-3">
-              {[IMG_SCULPTURE, IMG_CANDLES_COLOR, IMG_PILLOWS].map((src, i) => (
-                <div key={i} className="overflow-hidden rounded-xl border border-gold/20">
-                  <img src={src} alt="" className="h-24 w-full object-cover transition-transform duration-500 hover:scale-110" />
-                </div>
-              ))}
-            </div>
+          {/* Bottom: three full-width detail photos */}
+          <div className="grid grid-cols-3 gap-4">
+            {[
+              { src: IMG_SCULPTURE, alt: 'Деревянная скульптура с подсветкой' },
+              { src: IMG_CANDLES_COLOR, alt: 'Керамические свечницы' },
+              { src: IMG_PILLOWS, alt: 'Тайские подушки со слонами' },
+            ].map((item, i) => (
+              <div key={i} className="group overflow-hidden rounded-2xl border border-gold/20 shadow-[0_4px_30px_rgba(0,0,0,0.6)]">
+                <img
+                  src={item.src}
+                  alt={item.alt}
+                  className="h-72 w-full object-cover transition-transform duration-700 group-hover:scale-105 sm:h-80 lg:h-96"
+                />
+              </div>
+            ))}
           </div>
         </div>
       </section>
