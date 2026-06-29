@@ -205,23 +205,62 @@ export default function Index() {
       </section>
 
       {/* 3. SERVICES */}
-      <section id="services" className="bg-card/40 py-28">
-        <div className="container">
-          <div className="text-center">
-            <p className="font-body text-sm uppercase tracking-[0.3em] text-gold">Услуги</p>
-            <h2 className="mt-4 font-display text-4xl font-medium sm:text-5xl">Ритуалы для тела и ума</h2>
+      <section id="services" className="relative overflow-hidden py-32">
+        {/* Background photo with warm amber overlay */}
+        <img
+          src={IMG_LOUNGE}
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover"
+          style={{ filter: 'brightness(0.35) saturate(1.4)' }}
+        />
+        {/* Warm amber gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#3a1a00]/70 via-[#1a0a00]/60 to-[#2a1000]/80" />
+        {/* Subtle gold vignette edges */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_70%_at_50%_50%,transparent_40%,rgba(0,0,0,0.5)_100%)]" />
+
+        <div className="container relative z-10">
+          {/* Section header */}
+          <div className="text-center mb-16">
+            <p className="font-body text-sm uppercase tracking-[0.3em] text-gold">Программы</p>
+            <h2 className="mt-4 font-display text-4xl font-medium sm:text-5xl text-white">Ритуалы для тела и души</h2>
             <Ornament />
           </div>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {SERVICES.map((s) => (
-              <div key={s.title} className="group rounded-2xl border border-border bg-background p-7 transition-all duration-500 hover:border-gold/50 hover:-translate-y-2">
-                <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-gold/10 text-gold transition-colors group-hover:bg-gold group-hover:text-primary-foreground">
-                  <Icon name={s.icon} size={26} />
-                </div>
-                <h3 className="font-display text-2xl font-medium">{s.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
+
+          {/* Two main blocks */}
+          <div className="grid gap-8 sm:grid-cols-2 mb-16">
+            {/* Block 1 — For two */}
+            <div className="group relative overflow-hidden rounded-3xl border border-gold/30 bg-black/30 p-10 backdrop-blur-sm transition-all duration-500 hover:border-gold/60 hover:bg-black/40">
+              <div className="absolute top-0 left-0 h-1 w-full bg-gradient-to-r from-transparent via-gold to-transparent opacity-60" />
+              <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full border border-gold/40 bg-gold/10 text-gold">
+                <Icon name="Heart" size={30} />
               </div>
-            ))}
+              <h3 className="font-display text-3xl font-medium text-white sm:text-4xl">Программы для двоих</h3>
+              <div className="my-5 h-px w-12 bg-gold/50" />
+              <p className="text-base leading-relaxed text-white/75">
+                Выбирайте своё запоминающееся свидание или совместный ритуал расслабления и восстановления.
+              </p>
+            </div>
+
+            {/* Block 2 — Personal */}
+            <div className="group relative overflow-hidden rounded-3xl border border-gold/30 bg-black/30 p-10 backdrop-blur-sm transition-all duration-500 hover:border-gold/60 hover:bg-black/40">
+              <div className="absolute top-0 left-0 h-1 w-full bg-gradient-to-r from-transparent via-gold to-transparent opacity-60" />
+              <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full border border-gold/40 bg-gold/10 text-gold">
+                <Icon name="Sparkles" size={30} />
+              </div>
+              <h3 className="font-display text-3xl font-medium text-white sm:text-4xl">Персональная программа восстановления</h3>
+              <div className="my-5 h-px w-12 bg-gold/50" />
+              <p className="text-base leading-relaxed text-white/75">
+                Оставьте за порогом пространства дневные заботы и позвольте себе окунуться в мир СПА-программы.
+              </p>
+            </div>
+          </div>
+
+          {/* Common tagline */}
+          <div className="text-center">
+            <Ornament />
+            <p className="font-display text-2xl font-medium text-white/90 sm:text-3xl max-w-2xl mx-auto leading-snug">
+              «Тай СПА» — место, где тело отдыхает и возвращает себе целостность.
+            </p>
           </div>
         </div>
       </section>
