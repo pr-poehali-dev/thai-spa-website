@@ -4,10 +4,13 @@ import Icon from '@/components/ui/icon';
 const PHONE = '+7 (900) 123-45-67';
 const PHONE_HREF = 'tel:+79001234567';
 
+// Real photos of Tai Spa interior
 const IMG_HERO = 'https://cdn.poehali.dev/projects/9ea9e0d2-a1ec-4b0a-af03-e8295a2d64b5/bucket/110df343-8e9e-44d4-a243-3dee8b666183.jpg';
-const IMG_INTERIOR = 'https://cdn.poehali.dev/projects/9ea9e0d2-a1ec-4b0a-af03-e8295a2d64b5/files/1d53895e-fa94-4acb-b50e-d41defca681d.jpg';
-const IMG_SAUNA = 'https://cdn.poehali.dev/projects/9ea9e0d2-a1ec-4b0a-af03-e8295a2d64b5/files/938b9c47-38d5-476d-bec0-3ca657c5f209.jpg';
-const IMG_WRAP = 'https://cdn.poehali.dev/projects/9ea9e0d2-a1ec-4b0a-af03-e8295a2d64b5/files/b1a38961-fe71-4eda-b46b-18d68af6e0e5.jpg';
+const IMG_LOUNGE = 'https://cdn.poehali.dev/projects/9ea9e0d2-a1ec-4b0a-af03-e8295a2d64b5/bucket/3848fefb-b8d1-45d7-a667-9e18f683d3ab.jpg';
+const IMG_CANDLES_COLOR = 'https://cdn.poehali.dev/projects/9ea9e0d2-a1ec-4b0a-af03-e8295a2d64b5/bucket/0416b03c-7360-455d-b6f1-535598faba3e.jpg';
+const IMG_CANDLES_GOLD = 'https://cdn.poehali.dev/projects/9ea9e0d2-a1ec-4b0a-af03-e8295a2d64b5/bucket/73ed0ed1-5ea7-41e4-bd0d-0bd1696aa061.jpg';
+const IMG_SCULPTURE = 'https://cdn.poehali.dev/projects/9ea9e0d2-a1ec-4b0a-af03-e8295a2d64b5/bucket/fda167be-cc13-4fa3-9da7-e2995153e4bb.jpg';
+const IMG_PILLOWS = 'https://cdn.poehali.dev/projects/9ea9e0d2-a1ec-4b0a-af03-e8295a2d64b5/bucket/407e95e2-3856-4b03-9d80-9122da31756d.jpg';
 
 const NAV = [
   { id: 'hero', label: 'Главная' },
@@ -35,12 +38,19 @@ const PRICES = [
   { name: 'Ритуал «Перезагрузка»', time: '180 мин', price: '9 800 ₽' },
 ];
 
-const GALLERY = [IMG_INTERIOR, IMG_SAUNA, IMG_WRAP, IMG_SAUNA, IMG_WRAP, IMG_INTERIOR];
+const GALLERY = [
+  { src: IMG_LOUNGE, alt: 'Зал отдыха' },
+  { src: IMG_CANDLES_GOLD, alt: 'Золотые свечи' },
+  { src: IMG_SCULPTURE, alt: 'Деревянная скульптура' },
+  { src: IMG_CANDLES_COLOR, alt: 'Керамические свечницы' },
+  { src: IMG_PILLOWS, alt: 'Тайские подушки со слонами' },
+  { src: IMG_HERO, alt: 'Вход в Тай СПА' },
+];
 
 const MASTERS = [
-  { name: 'Чанида', role: 'Мастер тайского массажа', exp: '12 лет практики', img: IMG_WRAP },
-  { name: 'Малини', role: 'Специалист по обёртываниям', exp: '9 лет практики', img: IMG_SAUNA },
-  { name: 'Арун', role: 'Мастер парения', exp: '15 лет практики', img: IMG_INTERIOR },
+  { name: 'Чанида', role: 'Мастер тайского массажа', exp: '12 лет практики', img: IMG_CANDLES_GOLD },
+  { name: 'Малини', role: 'Специалист по обёртываниям', exp: '9 лет практики', img: IMG_SCULPTURE },
+  { name: 'Арун', role: 'Мастер парения', exp: '15 лет практики', img: IMG_CANDLES_COLOR },
 ];
 
 const Ornament = () => (
@@ -152,24 +162,39 @@ export default function Index() {
       <section id="about" className="relative py-28">
         <div className="container grid items-center gap-14 lg:grid-cols-2">
           <div className="relative animate-fade-up" style={{ opacity: 0 }}>
-            <div className="overflow-hidden rounded-[2rem] border border-gold/20">
-              <img src={IMG_WRAP} alt="Процедура обёртывания" className="h-[480px] w-full object-cover" />
+            {/* Main lounge photo */}
+            <div className="overflow-hidden rounded-[2rem] border border-gold/20 shadow-[0_0_60px_-10px_rgba(0,0,0,0.8)]">
+              <img src={IMG_LOUNGE} alt="Зал ожидания Тай СПА" className="h-[480px] w-full object-cover" />
+              <div className="absolute inset-0 rounded-[2rem] ring-1 ring-inset ring-gold/10" />
             </div>
-            <div className="absolute -bottom-6 -right-6 hidden rounded-2xl border border-gold/30 bg-card px-7 py-5 sm:block">
-              <p className="font-display text-4xl text-gold">8 лет</p>
-              <p className="text-sm text-muted-foreground">дарим покой</p>
+            {/* Small candles detail floating card */}
+            <div className="absolute -bottom-5 -right-4 hidden overflow-hidden rounded-2xl border border-gold/30 shadow-2xl sm:block" style={{ width: 140, height: 140 }}>
+              <img src={IMG_CANDLES_GOLD} alt="Свечи" className="h-full w-full object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
+            </div>
+            <div className="absolute -top-4 -left-4 hidden rounded-2xl border border-gold/30 bg-card px-5 py-4 sm:block shadow-xl">
+              <p className="font-display text-3xl text-gold">8 лет</p>
+              <p className="text-xs text-muted-foreground">дарим покой</p>
             </div>
           </div>
           <div>
             <p className="font-body text-sm uppercase tracking-[0.3em] text-gold">О пространстве</p>
-            <h2 className="mt-4 font-display text-4xl font-medium sm:text-5xl">Тишина, аромат трав и тёплое дерево тика</h2>
+            <h2 className="mt-4 font-display text-4xl font-medium sm:text-5xl">Тишина, аромат трав и тёплый красный свет</h2>
             <Ornament />
             <p className="text-muted-foreground leading-relaxed">
-              «Тай СПА» — это маленький мир за плотной шторой от городской суеты. Приглушённый свет, золотые орнаменты, запах лемонграсса и звук тихой воды. Здесь нет спешки — только вы, ваше тело и руки мастера.
+              «Тай СПА» — это маленький мир за плотной шторой от городской суеты. Приглушённый красный свет, золотые орнаменты, запах лемонграсса и звук тихой воды. Здесь нет спешки — только вы, ваше тело и руки мастера.
             </p>
             <p className="mt-4 text-muted-foreground leading-relaxed">
-              Мы создали место, куда приходят, чтобы выдохнуть. Каждая процедура — это ритуал, выверенный поколениями тайских традиций.
+              Интерьер создан вручную: настоящие тайские скульптуры, резьба по дереву, шёлковые подушки с вышивкой слонов. Место, куда приходят, чтобы выдохнуть.
             </p>
+            {/* Three detail thumbnails */}
+            <div className="mt-8 grid grid-cols-3 gap-3">
+              {[IMG_SCULPTURE, IMG_CANDLES_COLOR, IMG_PILLOWS].map((src, i) => (
+                <div key={i} className="overflow-hidden rounded-xl border border-gold/20">
+                  <img src={src} alt="" className="h-24 w-full object-cover transition-transform duration-500 hover:scale-110" />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -229,9 +254,13 @@ export default function Index() {
             <Ornament />
           </div>
           <div className="columns-2 gap-4 lg:columns-3 [&>*]:mb-4">
-            {GALLERY.map((src, i) => (
-              <div key={i} className="overflow-hidden rounded-2xl border border-border">
-                <img src={src} alt={`Тай СПА ${i + 1}`} className={`w-full object-cover transition-transform duration-700 hover:scale-110 ${i % 2 ? 'h-72' : 'h-56'}`} />
+            {GALLERY.map((item, i) => (
+              <div key={i} className="group overflow-hidden rounded-2xl border border-gold/15 shadow-[0_4px_24px_rgba(0,0,0,0.5)]">
+                <img
+                  src={item.src}
+                  alt={item.alt}
+                  className={`w-full object-cover transition-transform duration-700 group-hover:scale-110 ${i % 3 === 0 ? 'h-72' : i % 3 === 1 ? 'h-52' : 'h-64'}`}
+                />
               </div>
             ))}
           </div>
@@ -264,7 +293,7 @@ export default function Index() {
 
       {/* 7. CONTACTS */}
       <section id="contacts" className="relative overflow-hidden py-28">
-        <img src={IMG_SAUNA} alt="" className="absolute inset-0 h-full w-full object-cover opacity-25" />
+        <img src={IMG_LOUNGE} alt="" className="absolute inset-0 h-full w-full object-cover opacity-30" />
         <div className="absolute inset-0 bg-background/80" />
         <div className="container relative z-10 max-w-2xl text-center">
           <p className="font-body text-sm uppercase tracking-[0.3em] text-gold">Контакты</p>
