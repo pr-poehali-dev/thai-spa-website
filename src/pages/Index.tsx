@@ -4,7 +4,8 @@ import Icon from '@/components/ui/icon';
 const PHONE = '+7 (900) 123-45-67';
 const PHONE_HREF = 'tel:+79001234567';
 
-const IMG_HERO = 'https://cdn.poehali.dev/projects/9ea9e0d2-a1ec-4b0a-af03-e8295a2d64b5/files/1d53895e-fa94-4acb-b50e-d41defca681d.jpg';
+const IMG_HERO = 'https://cdn.poehali.dev/projects/9ea9e0d2-a1ec-4b0a-af03-e8295a2d64b5/bucket/110df343-8e9e-44d4-a243-3dee8b666183.jpg';
+const IMG_INTERIOR = 'https://cdn.poehali.dev/projects/9ea9e0d2-a1ec-4b0a-af03-e8295a2d64b5/files/1d53895e-fa94-4acb-b50e-d41defca681d.jpg';
 const IMG_SAUNA = 'https://cdn.poehali.dev/projects/9ea9e0d2-a1ec-4b0a-af03-e8295a2d64b5/files/938b9c47-38d5-476d-bec0-3ca657c5f209.jpg';
 const IMG_WRAP = 'https://cdn.poehali.dev/projects/9ea9e0d2-a1ec-4b0a-af03-e8295a2d64b5/files/b1a38961-fe71-4eda-b46b-18d68af6e0e5.jpg';
 
@@ -34,12 +35,12 @@ const PRICES = [
   { name: 'Ритуал «Перезагрузка»', time: '180 мин', price: '9 800 ₽' },
 ];
 
-const GALLERY = [IMG_HERO, IMG_SAUNA, IMG_WRAP, IMG_SAUNA, IMG_WRAP, IMG_HERO];
+const GALLERY = [IMG_INTERIOR, IMG_SAUNA, IMG_WRAP, IMG_SAUNA, IMG_WRAP, IMG_INTERIOR];
 
 const MASTERS = [
   { name: 'Чанида', role: 'Мастер тайского массажа', exp: '12 лет практики', img: IMG_WRAP },
   { name: 'Малини', role: 'Специалист по обёртываниям', exp: '9 лет практики', img: IMG_SAUNA },
-  { name: 'Арун', role: 'Мастер парения', exp: '15 лет практики', img: IMG_HERO },
+  { name: 'Арун', role: 'Мастер парения', exp: '15 лет практики', img: IMG_INTERIOR },
 ];
 
 const Ornament = () => (
@@ -119,24 +120,30 @@ export default function Index() {
 
       {/* 1. HERO */}
       <section id="hero" className="relative flex min-h-screen items-center justify-center overflow-hidden">
-        <img src={IMG_HERO} alt="Интерьер Тай СПА" className="absolute inset-0 h-full w-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/55 to-background" />
-        <div className="absolute inset-0 grain opacity-[0.12]" />
-        <div className="relative z-10 mx-auto max-w-3xl px-6 text-center">
-          <p className="animate-fade-up font-body text-sm uppercase tracking-[0.4em] text-gold" style={{ animationDelay: '0.1s', opacity: 0 }}>
+        {/* Photo of the real sign with flamingo */}
+        <img src={IMG_HERO} alt="Вывеска Тай СПА с фламинго" className="absolute inset-0 h-full w-full object-cover scale-105 animate-fade-in" />
+        {/* Warm glow behind the sign */}
+        <div className="absolute left-1/2 top-[34%] -z-0 h-[420px] w-[420px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gold/25 blur-[120px]" />
+        {/* Vignette: darkened edges, transparent center so the sign stays visible */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_55%_at_50%_38%,transparent_0%,hsl(var(--background)/0.45)_70%,hsl(var(--background))_100%)]" />
+        <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-background via-background/85 to-transparent" />
+        <div className="absolute inset-0 grain opacity-[0.1]" />
+
+        <div className="relative z-10 mx-auto flex min-h-screen max-w-3xl flex-col items-center justify-end px-6 pb-24 pt-32 text-center">
+          <p className="animate-fade-up font-body text-xs uppercase tracking-[0.45em] text-gold sm:text-sm" style={{ animationDelay: '0.3s', opacity: 0 }}>
             พื้นที่แห่งความผ่อนคลาย
           </p>
-          <h1 className="animate-fade-up mt-6 font-display text-5xl font-medium leading-[1.05] sm:text-7xl" style={{ animationDelay: '0.25s', opacity: 0 }}>
+          <h1 className="animate-fade-up mt-5 font-display text-4xl font-medium leading-[1.08] sm:text-6xl" style={{ animationDelay: '0.45s', opacity: 0 }}>
             Где тело отдыхает,<br /><span className="text-shimmer animate-shimmer">а голова перезагружается</span>
           </h1>
-          <p className="animate-fade-up mx-auto mt-7 max-w-xl text-base text-muted-foreground sm:text-lg" style={{ animationDelay: '0.4s', opacity: 0 }}>
+          <p className="animate-fade-up mx-auto mt-6 max-w-xl text-base text-muted-foreground sm:text-lg" style={{ animationDelay: '0.6s', opacity: 0 }}>
             Камерное пространство тайского массажа, обёртываний и парения. Настоящие мастерицы из Таиланда и атмосфера полного покоя.
           </p>
-          <div className="animate-fade-up mt-10 flex justify-center" style={{ animationDelay: '0.55s', opacity: 0 }}>
+          <div className="animate-fade-up mt-9 flex justify-center" style={{ animationDelay: '0.75s', opacity: 0 }}>
             <CallButton />
           </div>
         </div>
-        <button onClick={() => go('about')} className="absolute bottom-8 left-1/2 -translate-x-1/2 text-gold/70 animate-float">
+        <button onClick={() => go('about')} className="absolute bottom-7 left-1/2 z-10 -translate-x-1/2 text-gold/70 animate-float">
           <Icon name="ChevronDown" size={28} />
         </button>
       </section>
