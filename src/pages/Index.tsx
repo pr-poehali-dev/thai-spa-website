@@ -170,7 +170,7 @@ export default function Index() {
               </div>
               <div className="absolute -top-4 -left-4 hidden rounded-2xl border border-gold/30 bg-card px-5 py-4 sm:block shadow-xl">
                 <p className="font-display text-3xl text-gold">8 лет</p>
-                <p className="text-xs text-muted-foreground">дарим покой</p>
+                <p className="text-xs text-muted-foreground">возвращаем гармонию</p>
               </div>
             </div>
             <div>
