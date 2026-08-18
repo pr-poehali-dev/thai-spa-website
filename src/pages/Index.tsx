@@ -17,6 +17,7 @@ const NAV = [
   { id: 'about', label: 'О пространстве' },
   { id: 'services', label: 'Услуги' },
   { id: 'prices', label: 'Прайс' },
+  { id: 'memberships', label: 'Абонементы' },
   { id: 'gallery', label: 'Галерея' },
   { id: 'masters', label: 'Мастера' },
   { id: 'contacts', label: 'Контакты' },
@@ -36,6 +37,12 @@ const PRICES = [
   { name: 'Парение в сауне', time: '40 мин', price: '2 400 ₽' },
   { name: 'Кедровая бочка', time: '30 мин', price: '1 900 ₽' },
   { name: 'Ритуал «Перезагрузка»', time: '180 мин', price: '9 800 ₽' },
+];
+
+const MEMBERSHIPS = [
+  { visits: '3 посещения', price: '9 900 ₽', save: 'Выгода 5%', desc: 'Начните регулярную заботу о теле и разуме' },
+  { visits: '5 посещений', price: '15 500 ₽', save: 'Выгода 12%', featured: true, desc: 'Оптимальный ритм для устойчивой гармонии' },
+  { visits: '10 посещений', price: '28 900 ₽', save: 'Выгода 18%', desc: 'Полное погружение в заботу о себе каждую неделю' },
 ];
 
 const GALLERY = [
@@ -147,7 +154,7 @@ export default function Index() {
             Где тело отдыхает,<br /><span className="text-shimmer animate-shimmer">а голова перезагружается</span>
           </h1>
           <p className="animate-fade-up mx-auto mt-6 max-w-xl text-base text-muted-foreground sm:text-lg" style={{ animationDelay: '0.6s', opacity: 0 }}>
-            Камерное пространство тайского массажа, обёртываний и парения. Настоящие мастерицы из Таиланда и атмосфера полного покоя.
+            «Тай СПА» — пространство, где время замедляется, а всё происходящее — только для тебя и тебе на пользу.
           </p>
           <div className="animate-fade-up mt-9 flex justify-center" style={{ animationDelay: '0.75s', opacity: 0 }}>
             <CallButton />
@@ -284,8 +291,47 @@ export default function Index() {
               </div>
             ))}
           </div>
-          <p className="mt-6 text-center text-sm text-muted-foreground">Запись и подбор процедуры — по звонку администратору.</p>
+          <p className="mt-6 text-center text-sm text-muted-foreground">
+            Гармония любит регулярность — выбирайте пакет посещений и продлевайте эффект расслабления снова и снова.
+          </p>
           <div className="mt-7 flex justify-center"><CallButton /></div>
+        </div>
+      </section>
+
+      {/* 4.5 MEMBERSHIPS */}
+      <section id="memberships" className="bg-card/40 py-28">
+        <div className="container max-w-5xl">
+          <div className="text-center">
+            <p className="font-body text-sm uppercase tracking-[0.3em] text-gold">Абонементы</p>
+            <h2 className="mt-4 font-display text-4xl font-medium sm:text-5xl">Сделайте гармонию привычкой</h2>
+            <Ornament />
+            <p className="mx-auto mt-2 max-w-xl text-muted-foreground">
+              Одно посещение дарит передышку. Несколько — меняют состояние тела и головы навсегда. Чем больше визитов в пакете, тем выгоднее цена.
+            </p>
+          </div>
+          <div className="mt-14 grid gap-6 sm:grid-cols-3">
+            {MEMBERSHIPS.map((m) => (
+              <div
+                key={m.visits}
+                className={`relative rounded-3xl border p-8 text-center transition-all duration-500 hover:-translate-y-2 ${
+                  m.featured
+                    ? 'border-gold bg-gold/10 shadow-[0_0_50px_-12px_hsl(var(--gold))]'
+                    : 'border-gold/20 bg-background hover:border-gold/50'
+                }`}
+              >
+                {m.featured && (
+                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-gold px-4 py-1 text-xs font-medium text-primary-foreground">
+                    Популярный выбор
+                  </span>
+                )}
+                <p className="font-display text-2xl font-medium">{m.visits}</p>
+                <p className="mt-4 font-display text-4xl font-semibold text-gold">{m.price}</p>
+                <p className="mt-2 text-sm font-medium text-gold/80">{m.save}</p>
+                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{m.desc}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-10 flex justify-center"><CallButton /></div>
         </div>
       </section>
 
