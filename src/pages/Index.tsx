@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Icon from '@/components/ui/icon';
 import PriceList from '@/components/PriceList';
+import Reviews from '@/components/Reviews';
 
 const PHONE = '+7 (423) 220-57-20';
 const PHONE_HREF = 'tel:+74232205720';
@@ -21,6 +22,7 @@ const NAV = [
   { id: 'prices', label: 'Прайс' },
   { id: 'gallery', label: 'Галерея' },
   { id: 'masters', label: 'Мастера' },
+  { id: 'reviews', label: 'Отзывы' },
   { id: 'contacts', label: 'Контакты' },
 ];
 
@@ -317,6 +319,18 @@ export default function Index() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* 6.5 REVIEWS */}
+      <section id="reviews" className="bg-card/40 py-28">
+        <div className="container max-w-5xl">
+          <div className="text-center">
+            <p className="font-body text-sm uppercase tracking-[0.3em] text-gold">Отзывы</p>
+            <h2 className="mt-4 font-display text-4xl font-medium sm:text-5xl">Что говорят наши гости</h2>
+            <Ornament />
+          </div>
+          <Reviews />
         </div>
       </section>
 
