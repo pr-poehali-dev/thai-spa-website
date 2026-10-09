@@ -384,7 +384,8 @@ export default function Index() {
 
       <footer className="border-t border-border/40 py-8 text-center">
         <p className="font-display text-xl text-gold">Тай СПА</p>
-        <p className="mt-2 text-sm text-muted-foreground">{ADDRESS} · <a href={PHONE_HREF} className="hover:text-gold">{PHONE}</a></p>
+        <p className="mt-2 text-sm text-muted-foreground">{ADDRESS}</p>
+        <p className="mt-1 text-sm text-muted-foreground"><a href={PHONE_HREF} className="hover:text-gold">{PHONE}</a></p>
         <p className="mt-1 text-sm text-muted-foreground">© 2026 · Пространство тайского массажа и парения</p>
       </footer>
     </div>
