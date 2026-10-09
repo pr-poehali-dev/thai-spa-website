@@ -327,7 +327,7 @@ export default function Index() {
         <div className="container max-w-5xl">
           <div className="text-center">
             <p className="font-body text-sm uppercase tracking-[0.3em] text-gold">Отзывы</p>
-            <h2 className="mt-4 font-display text-4xl font-medium sm:text-5xl">Что говорят наши гости</h2>
+            <h2 className="mt-4 font-display text-4xl font-medium sm:text-5xl">Мнение наших гостей</h2>
             <Ornament />
           </div>
           <Reviews />
