@@ -342,17 +342,10 @@ export default function Index() {
           <p className="font-body text-sm uppercase tracking-[0.3em] text-gold">Контакты</p>
           <h2 className="mt-4 font-display text-4xl font-medium leading-tight sm:text-5xl">Приглашаем вас в наше пространство восстановления и релакса</h2>
           <Ornament />
-          <div className="grid gap-6 sm:grid-cols-2">
-            <div className="rounded-2xl border border-border bg-card/60 p-6">
-              <Icon name="MapPin" size={24} className="mx-auto mb-3 text-gold" />
-              <p className="font-medium">Адрес</p>
-              <p className="text-sm text-muted-foreground">{ADDRESS}</p>
-            </div>
-            <div className="rounded-2xl border border-border bg-card/60 p-6">
-              <Icon name="Clock" size={24} className="mx-auto mb-3 text-gold" />
-              <p className="font-medium">Часы работы</p>
-              <p className="text-sm text-muted-foreground">Ежедневно 10:00 — 22:00</p>
-            </div>
+          <div className="rounded-2xl border border-border bg-card/60 p-6">
+            <Icon name="MapPin" size={24} className="mx-auto mb-3 text-gold" />
+            <p className="font-medium">Адрес</p>
+            <p className="text-sm text-muted-foreground">{ADDRESS}</p>
           </div>
           <div className="mt-6 overflow-hidden rounded-2xl border border-gold/30 shadow-[0_4px_24px_rgba(0,0,0,0.5)]">
             <iframe
