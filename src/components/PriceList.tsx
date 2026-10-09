@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Icon from '@/components/ui/icon';
 
 type Option = { time: string; price: string };
@@ -199,10 +200,15 @@ export default function PriceList() {
         <div className="relative overflow-hidden rounded-3xl border border-gold bg-gold/10 p-8 shadow-[0_0_60px_-15px_hsl(var(--gold))] sm:p-10">
           <span className="absolute right-6 top-6 rounded-full bg-gold px-4 py-1 text-xs font-medium text-primary-foreground">Новинка</span>
           <h4 className="pr-24 font-display text-3xl font-medium sm:text-4xl">{AQUA.name}</h4>
-          <p className="mt-5 max-w-3xl leading-relaxed text-foreground/90">{AQUA.desc}</p>
-          <div className="mt-8 flex flex-wrap items-center gap-6 border-t border-gold/30 pt-6">
+          <div className="mt-6 flex flex-wrap items-center gap-6 border-t border-gold/30 pt-6">
             <span className="flex items-center gap-2 text-muted-foreground"><Icon name="Clock" size={16} /> {AQUA.options[0].time}</span>
             <span className="font-display text-3xl font-semibold text-gold">{AQUA.options[0].price}</span>
+            <Link
+              to="/aqua-head-spa"
+              className="inline-flex items-center gap-2 rounded-full border border-gold px-6 py-2.5 text-sm font-medium text-gold transition-colors hover:bg-gold hover:text-primary-foreground sm:ml-auto"
+            >
+              Подробнее <Icon name="ArrowRight" size={16} />
+            </Link>
           </div>
         </div>
       </div>

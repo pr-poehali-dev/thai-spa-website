@@ -77,6 +77,11 @@ export default function Index() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
+    const id = window.location.hash.slice(1);
+    if (id) setTimeout(() => document.getElementById(id)?.scrollIntoView(), 100);
+  }, []);
+
+  useEffect(() => {
     const obs = new IntersectionObserver(
       (entries) => entries.forEach((e) => e.isIntersecting && setActive(e.target.id)),
       { rootMargin: '-45% 0px -45% 0px' }
