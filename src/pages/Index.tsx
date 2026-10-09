@@ -2,8 +2,9 @@ import { useState, useEffect } from 'react';
 import Icon from '@/components/ui/icon';
 import PriceList from '@/components/PriceList';
 
-const PHONE = '+7 (900) 123-45-67';
-const PHONE_HREF = 'tel:+79001234567';
+const PHONE = '+7 (423) 220-57-20';
+const PHONE_HREF = 'tel:+74232205720';
+const ADDRESS = 'г. Владивосток, ул. Светланская, д. 181';
 
 // Real photos of Tai Spa interior
 const IMG_HERO = 'https://cdn.poehali.dev/projects/9ea9e0d2-a1ec-4b0a-af03-e8295a2d64b5/bucket/110df343-8e9e-44d4-a243-3dee8b666183.jpg';
@@ -59,7 +60,7 @@ const CallButton = ({ className = '' }: { className?: string }) => (
     className={`group inline-flex items-center gap-3 rounded-full bg-gold px-7 py-3.5 font-body font-medium text-primary-foreground transition-all duration-300 hover:shadow-[0_0_40px_-8px_hsl(var(--gold))] hover:scale-[1.03] ${className}`}
   >
     <Icon name="Phone" size={18} className="transition-transform group-hover:rotate-12" />
-    Позвонить администратору
+    Звонок организатору твоего восстановления
   </a>
 );
 
@@ -331,7 +332,7 @@ export default function Index() {
             <div className="rounded-2xl border border-border bg-card/60 p-6">
               <Icon name="MapPin" size={24} className="mx-auto mb-3 text-gold" />
               <p className="font-medium">Адрес</p>
-              <p className="text-sm text-muted-foreground">г. Москва, ул. Лотосовая, 7</p>
+              <p className="text-sm text-muted-foreground">{ADDRESS}</p>
             </div>
             <div className="rounded-2xl border border-border bg-card/60 p-6">
               <Icon name="Clock" size={24} className="mx-auto mb-3 text-gold" />
@@ -348,7 +349,8 @@ export default function Index() {
 
       <footer className="border-t border-border/40 py-8 text-center">
         <p className="font-display text-xl text-gold">Тай СПА</p>
-        <p className="mt-2 text-sm text-muted-foreground">© 2026 · Пространство тайского массажа и парения</p>
+        <p className="mt-2 text-sm text-muted-foreground">{ADDRESS} · <a href={PHONE_HREF} className="hover:text-gold">{PHONE}</a></p>
+        <p className="mt-1 text-sm text-muted-foreground">© 2026 · Пространство тайского массажа и парения</p>
       </footer>
     </div>
   );
