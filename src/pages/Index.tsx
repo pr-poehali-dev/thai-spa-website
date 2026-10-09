@@ -163,9 +163,14 @@ export default function Index() {
                 <img src={IMG_LOUNGE} alt="Зал ожидания Тай СПА" className="h-[480px] w-full object-cover" />
                 <div className="absolute inset-0 rounded-[2rem] ring-1 ring-inset ring-gold/10" />
               </div>
-              <div className="absolute -top-4 -left-4 hidden rounded-2xl border border-gold/30 bg-card px-5 py-4 sm:block shadow-xl">
-                <p className="font-display text-3xl text-gold">Более 8 лет</p>
-                <p className="text-xs text-muted-foreground">дарим гармонию</p>
+              <div className="absolute -top-5 -left-3 flex items-center gap-4 rounded-2xl border border-gold/50 bg-card px-5 py-4 shadow-[0_0_40px_-10px_hsl(var(--gold))] sm:-left-5 sm:px-6 sm:py-5">
+                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gold/15 sm:h-14 sm:w-14">
+                  <Icon name="Award" size={28} className="text-gold" />
+                </span>
+                <div>
+                  <p className="font-display text-3xl leading-none text-gold sm:text-4xl">Более 8 лет</p>
+                  <p className="mt-1 text-sm text-foreground/80">дарим гармонию</p>
+                </div>
               </div>
             </div>
             <div>
@@ -177,6 +182,9 @@ export default function Index() {
               </p>
               <p className="mt-4 text-muted-foreground leading-relaxed">
                 Все элементы декора выполнены вручную: настоящие тайские скульптуры, резьба по дереву, шёлковые подушки и портьеры с изысканной вышивкой. «Тай СПА» — это место, куда приходят, чтобы выдохнуть.
+              </p>
+              <p className="mt-4 border-l-2 border-gold pl-4 font-display text-xl leading-snug text-foreground/90">
+                Более 8 лет мы во Владивостоке — и всё это время к нам возвращаются гости, для которых «Тай СПА» стал местом силы и восстановления.
               </p>
             </div>
           </div>
