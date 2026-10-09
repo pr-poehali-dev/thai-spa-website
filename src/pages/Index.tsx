@@ -42,6 +42,12 @@ const GALLERY = [
   { src: IMG_HERO, alt: 'Вход в Тай СПА' },
 ];
 
+const PRICE_BG = [
+  'https://cdn.poehali.dev/projects/9ea9e0d2-a1ec-4b0a-af03-e8295a2d64b5/files/1d53895e-fa94-4acb-b50e-d41defca681d.jpg',
+  IMG_LOUNGE,
+  'https://cdn.poehali.dev/projects/9ea9e0d2-a1ec-4b0a-af03-e8295a2d64b5/files/938b9c47-38d5-476d-bec0-3ca657c5f209.jpg',
+];
+
 const MASTERS = [
   'https://cdn.poehali.dev/projects/9ea9e0d2-a1ec-4b0a-af03-e8295a2d64b5/files/0cf74c02-2456-403f-aa25-ce1923cd2508.jpg',
   'https://cdn.poehali.dev/projects/9ea9e0d2-a1ec-4b0a-af03-e8295a2d64b5/files/b1a38961-fe71-4eda-b46b-18d68af6e0e5.jpg',
@@ -269,8 +275,15 @@ export default function Index() {
       </section>
 
       {/* 4. PRICES */}
-      <section id="prices" className="py-28">
-        <div className="container max-w-6xl">
+      <section id="prices" className="relative overflow-hidden py-28">
+        <div className="absolute inset-0 flex flex-col" aria-hidden>
+          {PRICE_BG.map((src) => (
+            <img key={src} src={src} alt="" className="h-1/3 w-full object-cover opacity-25 blur-[2px]" />
+          ))}
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/70 to-background" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,hsl(var(--background)/0.6)_100%)]" />
+        <div className="container relative z-10 max-w-6xl">
           <div className="text-center mb-14">
             <p className="font-body text-sm uppercase tracking-[0.3em] text-gold">Прайс-лист</p>
             <h2 className="mt-4 font-display text-4xl font-medium sm:text-5xl">Программы и стоимость</h2>
