@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import Icon from '@/components/ui/icon';
 import PriceList from '@/components/PriceList';
 import Reviews from '@/components/Reviews';
-import AquaHeadSpa from '@/components/AquaHeadSpa';
 
 const PHONE = '+7 (423) 220-57-20';
 const PHONE_HREF = 'tel:+74232205720';
@@ -20,7 +19,6 @@ const NAV = [
   { id: 'hero', label: 'Главная' },
   { id: 'about', label: 'О пространстве' },
   { id: 'services', label: 'Услуги' },
-  { id: 'aqua', label: 'Aqua HEAD SPA' },
   { id: 'prices', label: 'Прайс' },
   { id: 'gallery', label: 'Галерея' },
   { id: 'masters', label: 'Мастера' },
@@ -259,14 +257,6 @@ export default function Index() {
               «Тай СПА» — место, где тело отдыхает и возвращает себе целостность.
             </p>
           </div>
-        </div>
-      </section>
-
-      {/* 3.5 AQUA HEAD SPA */}
-      <section id="aqua" className="relative overflow-hidden py-28">
-        <div className="absolute inset-0 grain opacity-[0.06]" />
-        <div className="container relative max-w-6xl">
-          <AquaHeadSpa phoneHref={PHONE_HREF} />
         </div>
       </section>
 
