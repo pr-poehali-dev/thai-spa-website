@@ -354,6 +354,23 @@ export default function Index() {
               <p className="text-sm text-muted-foreground">Ежедневно 10:00 — 22:00</p>
             </div>
           </div>
+          <div className="mt-6 overflow-hidden rounded-2xl border border-gold/30 shadow-[0_4px_24px_rgba(0,0,0,0.5)]">
+            <iframe
+              title="Тай СПА на карте"
+              src={`https://yandex.ru/map-widget/v1/?text=${encodeURIComponent('Владивосток, Светланская улица, 181')}&z=16`}
+              className="h-80 w-full"
+              loading="lazy"
+              allowFullScreen
+            />
+          </div>
+          <a
+            href={`https://yandex.ru/maps/?text=${encodeURIComponent('Владивосток, Светланская улица, 181')}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-4 inline-flex items-center gap-2 text-sm text-gold hover:underline"
+          >
+            <Icon name="Navigation" size={15} /> Построить маршрут
+          </a>
           <div className="mt-10 flex flex-col items-center gap-4">
             <CallButton />
             <a href={PHONE_HREF} className="font-display text-2xl text-foreground hover:text-gold transition-colors">{PHONE}</a>
