@@ -340,7 +340,7 @@ export default function Index() {
         <div className="absolute inset-0 bg-background/80" />
         <div className="container relative z-10 max-w-2xl text-center">
           <p className="font-body text-sm uppercase tracking-[0.3em] text-gold">Контакты</p>
-          <h2 className="mt-4 font-display text-4xl font-medium leading-tight sm:text-5xl">Приглашаем вас в наше пространство умиротворения и релакса</h2>
+          <h2 className="mt-4 font-display text-4xl font-medium leading-tight sm:text-5xl">Приглашаем вас в наше пространство восстановления и релакса</h2>
           <Ornament />
           <div className="grid gap-6 sm:grid-cols-2">
             <div className="rounded-2xl border border-border bg-card/60 p-6">
