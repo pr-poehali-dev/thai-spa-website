@@ -44,7 +44,7 @@ const GALLERY = [
 
 const MASTERS = [
   'https://cdn.poehali.dev/projects/9ea9e0d2-a1ec-4b0a-af03-e8295a2d64b5/files/0cf74c02-2456-403f-aa25-ce1923cd2508.jpg',
-  'https://cdn.poehali.dev/projects/9ea9e0d2-a1ec-4b0a-af03-e8295a2d64b5/files/e82b830d-0540-4b4c-8c10-80e4956540f0.jpg',
+  'https://cdn.poehali.dev/projects/9ea9e0d2-a1ec-4b0a-af03-e8295a2d64b5/files/b1a38961-fe71-4eda-b46b-18d68af6e0e5.jpg',
   'https://cdn.poehali.dev/projects/9ea9e0d2-a1ec-4b0a-af03-e8295a2d64b5/files/f3c4acca-ed98-47cc-8c0c-ea7ca3f3b4bd.jpg',
 ];
 
