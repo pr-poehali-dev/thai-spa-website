@@ -43,9 +43,9 @@ const GALLERY = [
 ];
 
 const MASTERS = [
-  { name: 'Чанида', role: 'Мастер тайского массажа', exp: '12 лет практики', img: IMG_CANDLES_GOLD },
-  { name: 'Малини', role: 'Специалист по обёртываниям', exp: '9 лет практики', img: IMG_SCULPTURE },
-  { name: 'Арун', role: 'Мастер парения', exp: '15 лет практики', img: IMG_CANDLES_COLOR },
+  'https://cdn.poehali.dev/projects/9ea9e0d2-a1ec-4b0a-af03-e8295a2d64b5/files/0cf74c02-2456-403f-aa25-ce1923cd2508.jpg',
+  'https://cdn.poehali.dev/projects/9ea9e0d2-a1ec-4b0a-af03-e8295a2d64b5/files/e82b830d-0540-4b4c-8c10-80e4956540f0.jpg',
+  'https://cdn.poehali.dev/projects/9ea9e0d2-a1ec-4b0a-af03-e8295a2d64b5/files/f3c4acca-ed98-47cc-8c0c-ea7ca3f3b4bd.jpg',
 ];
 
 const Ornament = () => (
@@ -307,15 +307,9 @@ export default function Index() {
             <Ornament />
           </div>
           <div className="grid gap-8 sm:grid-cols-3">
-            {MASTERS.map((m) => (
-              <div key={m.name} className="group text-center">
-                <div className="relative mx-auto mb-5 overflow-hidden rounded-[1.5rem] border border-gold/20">
-                  <img src={m.img} alt={m.name} className="h-80 w-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
-                </div>
-                <h3 className="font-display text-2xl">{m.name}</h3>
-                <p className="text-gold text-sm">{m.role}</p>
-                <p className="text-sm text-muted-foreground">{m.exp}</p>
+            {MASTERS.map((src, i) => (
+              <div key={src} className="group overflow-hidden rounded-[1.5rem] border border-gold/20 shadow-[0_4px_24px_rgba(0,0,0,0.5)]">
+                <img src={src} alt={`Процедура в Тай СПА ${i + 1}`} className="h-[28rem] w-full object-cover transition-transform duration-700 group-hover:scale-105" />
               </div>
             ))}
           </div>
