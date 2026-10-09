@@ -164,8 +164,8 @@ export default function Index() {
                 <div className="absolute inset-0 rounded-[2rem] ring-1 ring-inset ring-gold/10" />
               </div>
               <div className="absolute -top-4 -left-4 hidden rounded-2xl border border-gold/30 bg-card px-5 py-4 sm:block shadow-xl">
-                <p className="font-display text-3xl text-gold">8 лет</p>
-                <p className="text-xs text-muted-foreground">дарим гармонию мыслей и тела</p>
+                <p className="font-display text-3xl text-gold">Более 8 лет</p>
+                <p className="text-xs text-muted-foreground">дарим гармонию</p>
               </div>
             </div>
             <div>
