@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Icon from '@/components/ui/icon';
+import PriceList from '@/components/PriceList';
 
 const PHONE = '+7 (900) 123-45-67';
 const PHONE_HREF = 'tel:+79001234567';
@@ -28,15 +29,6 @@ const SERVICES = [
   { icon: 'Leaf', title: 'Обёртывания', desc: 'Травяные и медовые обёртывания с тайскими компрессами для глубокого питания и детокса кожи.' },
   { icon: 'Flame', title: 'Парение в сауне', desc: 'Мягкий пар и ароматы трав, которые раскрывают поры и наполняют тело лёгкостью.' },
   { icon: 'Droplets', title: 'Кедровая бочка', desc: 'Фитопарение в кедровой бочке — целебный пар, бережная детоксикация и глубокое расслабление.' },
-];
-
-const PRICES = [
-  { name: 'Традиционный тайский массаж', time: '60 / 90 мин', price: '3 500 / 4 900 ₽' },
-  { name: 'Масляный SPA-массаж', time: '90 мин', price: '5 200 ₽' },
-  { name: 'Травяное обёртывание', time: '60 мин', price: '3 800 ₽' },
-  { name: 'Парение в сауне', time: '40 мин', price: '2 400 ₽' },
-  { name: 'Кедровая бочка', time: '30 мин', price: '1 900 ₽' },
-  { name: 'Ритуал «Перезагрузка»', time: '180 мин', price: '9 800 ₽' },
 ];
 
 const MEMBERSHIPS = [
@@ -274,24 +266,14 @@ export default function Index() {
 
       {/* 4. PRICES */}
       <section id="prices" className="py-28">
-        <div className="container max-w-4xl">
-          <div className="text-center">
+        <div className="container max-w-6xl">
+          <div className="text-center mb-14">
             <p className="font-body text-sm uppercase tracking-[0.3em] text-gold">Прайс-лист</p>
-            <h2 className="mt-4 font-display text-4xl font-medium sm:text-5xl">Стоимость процедур</h2>
+            <h2 className="mt-4 font-display text-4xl font-medium sm:text-5xl">Программы и стоимость</h2>
             <Ornament />
           </div>
-          <div className="rounded-3xl border border-gold/20 bg-card/50 p-2 sm:p-4">
-            {PRICES.map((p, i) => (
-              <div key={p.name} className={`flex items-center justify-between gap-4 px-4 py-5 sm:px-6 ${i !== PRICES.length - 1 ? 'border-b border-border/60' : ''}`}>
-                <div>
-                  <p className="font-display text-xl">{p.name}</p>
-                  <p className="text-sm text-muted-foreground">{p.time}</p>
-                </div>
-                <p className="whitespace-nowrap font-body font-semibold text-gold">{p.price}</p>
-              </div>
-            ))}
-          </div>
-          <p className="mt-6 text-center text-sm text-muted-foreground">
+          <PriceList />
+          <p className="mt-14 text-center text-sm text-muted-foreground">
             Гармония любит регулярность — выбирайте пакет посещений и продлевайте эффект расслабления снова и снова.
           </p>
           <div className="mt-7 flex justify-center"><CallButton /></div>
