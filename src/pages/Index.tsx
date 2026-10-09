@@ -18,7 +18,6 @@ const NAV = [
   { id: 'about', label: 'О пространстве' },
   { id: 'services', label: 'Услуги' },
   { id: 'prices', label: 'Прайс' },
-  { id: 'memberships', label: 'Абонементы' },
   { id: 'gallery', label: 'Галерея' },
   { id: 'masters', label: 'Мастера' },
   { id: 'contacts', label: 'Контакты' },
@@ -29,12 +28,6 @@ const SERVICES = [
   { icon: 'Leaf', title: 'Обёртывания', desc: 'Травяные и медовые обёртывания с тайскими компрессами для глубокого питания и детокса кожи.' },
   { icon: 'Flame', title: 'Парение в сауне', desc: 'Мягкий пар и ароматы трав, которые раскрывают поры и наполняют тело лёгкостью.' },
   { icon: 'Droplets', title: 'Кедровая бочка', desc: 'Фитопарение в кедровой бочке — целебный пар, бережная детоксикация и глубокое расслабление.' },
-];
-
-const MEMBERSHIPS = [
-  { visits: '3 посещения', price: '9 900 ₽', save: 'Выгода 5%', desc: 'Начните регулярную заботу о теле и разуме' },
-  { visits: '5 посещений', price: '15 500 ₽', save: 'Выгода 12%', featured: true, desc: 'Оптимальный ритм для устойчивой гармонии' },
-  { visits: '10 посещений', price: '28 900 ₽', save: 'Выгода 18%', desc: 'Полное погружение в заботу о себе каждую неделю' },
 ];
 
 const GALLERY = [
@@ -274,46 +267,9 @@ export default function Index() {
           </div>
           <PriceList />
           <p className="mt-14 text-center text-sm text-muted-foreground">
-            Гармония любит регулярность — выбирайте пакет посещений и продлевайте эффект расслабления снова и снова.
+            Гармония любит регулярность — возвращайтесь к нам снова, чтобы эффект расслабления длился дольше.
           </p>
           <div className="mt-7 flex justify-center"><CallButton /></div>
-        </div>
-      </section>
-
-      {/* 4.5 MEMBERSHIPS */}
-      <section id="memberships" className="bg-card/40 py-28">
-        <div className="container max-w-5xl">
-          <div className="text-center">
-            <p className="font-body text-sm uppercase tracking-[0.3em] text-gold">Абонементы</p>
-            <h2 className="mt-4 font-display text-4xl font-medium sm:text-5xl">Сделайте гармонию привычкой</h2>
-            <Ornament />
-            <p className="mx-auto mt-2 max-w-xl text-muted-foreground">
-              Одно посещение дарит передышку. Несколько — меняют состояние тела и головы навсегда. Чем больше визитов в пакете, тем выгоднее цена.
-            </p>
-          </div>
-          <div className="mt-14 grid gap-6 sm:grid-cols-3">
-            {MEMBERSHIPS.map((m) => (
-              <div
-                key={m.visits}
-                className={`relative rounded-3xl border p-8 text-center transition-all duration-500 hover:-translate-y-2 ${
-                  m.featured
-                    ? 'border-gold bg-gold/10 shadow-[0_0_50px_-12px_hsl(var(--gold))]'
-                    : 'border-gold/20 bg-background hover:border-gold/50'
-                }`}
-              >
-                {m.featured && (
-                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-gold px-4 py-1 text-xs font-medium text-primary-foreground">
-                    Популярный выбор
-                  </span>
-                )}
-                <p className="font-display text-2xl font-medium">{m.visits}</p>
-                <p className="mt-4 font-display text-4xl font-semibold text-gold">{m.price}</p>
-                <p className="mt-2 text-sm font-medium text-gold/80">{m.save}</p>
-                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{m.desc}</p>
-              </div>
-            ))}
-          </div>
-          <div className="mt-10 flex justify-center"><CallButton /></div>
         </div>
       </section>
 
