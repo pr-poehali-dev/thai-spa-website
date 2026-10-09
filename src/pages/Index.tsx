@@ -62,7 +62,7 @@ const CallButton = ({ className = '' }: { className?: string }) => (
     className={`group inline-flex items-center gap-3 rounded-full bg-gold px-7 py-3.5 font-body font-medium text-primary-foreground transition-all duration-300 hover:shadow-[0_0_40px_-8px_hsl(var(--gold))] hover:scale-[1.03] ${className}`}
   >
     <Icon name="Phone" size={18} className="transition-transform group-hover:rotate-12" />
-    Звонок организатору твоего восстановления
+    Звонок администратору
   </a>
 );
 
