@@ -50,7 +50,7 @@ const PRICE_BG = [
 
 const MASTERS = [
   'https://cdn.poehali.dev/projects/9ea9e0d2-a1ec-4b0a-af03-e8295a2d64b5/files/0cf74c02-2456-403f-aa25-ce1923cd2508.jpg',
-  'https://cdn.poehali.dev/projects/9ea9e0d2-a1ec-4b0a-af03-e8295a2d64b5/files/b1a38961-fe71-4eda-b46b-18d68af6e0e5.jpg',
+  'https://cdn.poehali.dev/projects/9ea9e0d2-a1ec-4b0a-af03-e8295a2d64b5/files/a479e224-9d09-440e-95f4-c4e911dae68d.jpg',
   'https://cdn.poehali.dev/projects/9ea9e0d2-a1ec-4b0a-af03-e8295a2d64b5/bucket/8108f571-e805-49a7-aee2-6afcb636a5d7.jpg',
 ];
 
