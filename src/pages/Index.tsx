@@ -357,14 +357,14 @@ export default function Index() {
           <div className="mt-6 overflow-hidden rounded-2xl border border-gold/30 shadow-[0_4px_24px_rgba(0,0,0,0.5)]">
             <iframe
               title="Тай СПА на карте"
-              src={`https://yandex.ru/map-widget/v1/?text=${encodeURIComponent('Владивосток, Светланская улица, 181')}&z=16`}
+              src="https://yandex.ru/map-widget/v1/?ll=131.927245%2C43.112510&z=17&pt=131.927245%2C43.112510%2Cpm2rdl"
               className="h-80 w-full"
               loading="lazy"
               allowFullScreen
             />
           </div>
           <a
-            href={`https://yandex.ru/maps/?text=${encodeURIComponent('Владивосток, Светланская улица, 181')}`}
+            href="https://yandex.ru/maps/?rtext=~43.112510%2C131.927245&rtt=auto"
             target="_blank"
             rel="noopener noreferrer"
             className="mt-4 inline-flex items-center gap-2 text-sm text-gold hover:underline"
