@@ -132,9 +132,6 @@ export default function Index() {
               </button>
             ))}
           </nav>
-          <a href={PHONE_HREF} className="hidden md:inline-flex items-center gap-2 rounded-full border border-gold/50 px-4 py-2 text-sm text-gold transition-colors hover:bg-gold/10">
-            <Icon name="Phone" size={15} /> {PHONE}
-          </a>
           <button className="lg:hidden text-foreground" onClick={() => setMenuOpen((v) => !v)}>
             <Icon name={menuOpen ? 'X' : 'Menu'} size={26} />
           </button>
