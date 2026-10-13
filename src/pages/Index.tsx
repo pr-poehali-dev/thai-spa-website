@@ -20,7 +20,7 @@ const IMG_PILLOWS = 'https://cdn.poehali.dev/projects/9ea9e0d2-a1ec-4b0a-af03-e8
 
 const NAV = [
   { id: 'hero', label: 'Главная' },
-  { id: 'about', label: 'О пространстве' },
+  { id: 'about', label: 'Пространство' },
   { id: 'services', label: 'Услуги' },
   { id: 'prices', label: 'Прайс' },
   { id: 'gallery', label: 'Галерея' },
