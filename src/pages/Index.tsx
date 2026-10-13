@@ -409,6 +409,17 @@ export default function Index() {
               </button>
             </div>
             <p className="mt-3 text-xs text-muted-foreground">MAX: {MOBILE} — найдите нас по номеру</p>
+            <a
+              href="https://www.instagram.com/flamingotaispa_vl/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 inline-flex items-center gap-2 text-sm text-gold hover:underline"
+            >
+              <Icon name="AtSign" size={16} /> flamingotaispa_vl
+            </a>
+            <p className="mx-auto mt-2 max-w-md text-[11px] leading-snug text-muted-foreground/70">
+              Instagram принадлежит компании Meta, признанной экстремистской организацией и запрещённой в РФ.
+            </p>
           </div>
         </div>
       </section>
