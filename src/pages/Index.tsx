@@ -433,9 +433,9 @@ export default function Index() {
               href="https://www.instagram.com/flamingotaispa_vl/"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-6 inline-flex items-center gap-2 text-sm text-gold hover:underline"
+              className="relative z-10 mt-6 inline-flex w-56 items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#F58529] via-[#DD2A7B] to-[#8134AF] px-6 py-3 font-medium text-white shadow-lg shadow-[#DD2A7B]/30 transition-transform hover:scale-[1.03]"
             >
-              <Icon name="AtSign" size={16} /> flamingotaispa_vl
+              <Icon name="Instagram" fallback="AtSign" size={18} /> Instagram
             </a>
             <p className="mx-auto mt-2 max-w-md text-[11px] leading-snug text-muted-foreground/70">
               Instagram принадлежит компании Meta, признанной экстремистской организацией и запрещённой в РФ.
