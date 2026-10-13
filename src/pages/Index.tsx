@@ -114,7 +114,11 @@ export default function Index() {
       <header className="fixed inset-x-0 top-0 z-50 border-b border-border/40 bg-background/80 backdrop-blur-md">
         <div className="container flex h-16 items-center justify-between">
           <button onClick={() => go('hero')} className="flex items-center gap-2">
-            <Icon name="Flower2" size={22} className="text-gold" />
+            <span
+              aria-hidden
+              className="block h-9 w-9 bg-gold"
+              style={{ WebkitMask: 'url(/flamingo-logo.png) center/contain no-repeat', mask: 'url(/flamingo-logo.png) center/contain no-repeat' }}
+            />
             <span className="font-display text-2xl font-semibold tracking-wide">Тай СПА</span>
           </button>
           <nav className="hidden lg:flex items-center gap-7">
