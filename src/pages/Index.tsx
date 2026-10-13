@@ -81,7 +81,21 @@ export default function Index() {
   const [maxCopied, setMaxCopied] = useState(false);
 
   const copyMax = () => {
-    navigator.clipboard?.writeText(MOBILE_RAW);
+    const fallback = () => {
+      const ta = document.createElement('textarea');
+      ta.value = MOBILE_RAW;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy'); } catch { /* ignore */ }
+      document.body.removeChild(ta);
+    };
+    if (navigator.clipboard?.writeText) {
+      navigator.clipboard.writeText(MOBILE_RAW).catch(fallback);
+    } else {
+      fallback();
+    }
     setMaxCopied(true);
     setTimeout(() => setMaxCopied(false), 2500);
   };
