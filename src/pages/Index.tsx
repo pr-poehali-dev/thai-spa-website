@@ -404,9 +404,14 @@ export default function Index() {
               <button
                 type="button"
                 onClick={copyMax}
-                className="inline-flex w-56 items-center justify-center gap-2 rounded-full border border-gold/60 px-6 py-3 font-medium text-gold transition-colors hover:bg-gold/10"
+                className="inline-flex w-56 items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#2E8BFF] via-[#5B5BFF] to-[#9B3DFF] px-6 py-3 font-medium text-white shadow-lg shadow-[#5B5BFF]/30 transition-transform hover:scale-[1.03]"
               >
-                <Icon name={maxCopied ? 'Check' : 'Send'} size={18} /> {maxCopied ? 'Номер скопирован' : 'Написать в MAX'}
+                {maxCopied ? (
+                  <Icon name="Check" size={18} />
+                ) : (
+                  <span className="flex h-6 w-6 items-center justify-center rounded-[8px] bg-white text-[13px] font-extrabold leading-none text-[#5B5BFF]">M</span>
+                )}
+                {maxCopied ? 'Номер скопирован' : 'Написать в MAX'}
               </button>
             </div>
             <p className="mt-3 text-xs text-muted-foreground">MAX: {MOBILE} — найдите нас по номеру</p>
