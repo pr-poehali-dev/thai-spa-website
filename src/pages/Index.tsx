@@ -6,6 +6,9 @@ import Reviews from '@/components/Reviews';
 const PHONE = '+7 (423) 220-57-20';
 const PHONE_HREF = 'tel:+74232205720';
 const ADDRESS = 'г. Владивосток, ул. Светланская, д. 181';
+const MOBILE = '+7 (914) 332-33-33';
+const MOBILE_RAW = '+79143323333';
+const WHATSAPP_HREF = 'https://wa.me/79143323333?text=' + encodeURIComponent('Здравствуйте! Хочу записаться в Тай СПА');
 
 // Real photos of Tai Spa interior
 const IMG_HERO = 'https://cdn.poehali.dev/projects/9ea9e0d2-a1ec-4b0a-af03-e8295a2d64b5/bucket/110df343-8e9e-44d4-a243-3dee8b666183.jpg';
@@ -75,6 +78,13 @@ const CallButton = ({ className = '' }: { className?: string }) => (
 export default function Index() {
   const [active, setActive] = useState('hero');
   const [menuOpen, setMenuOpen] = useState(false);
+  const [maxCopied, setMaxCopied] = useState(false);
+
+  const copyMax = () => {
+    navigator.clipboard?.writeText(MOBILE_RAW);
+    setMaxCopied(true);
+    setTimeout(() => setMaxCopied(false), 2500);
+  };
 
   useEffect(() => {
     const id = window.location.hash.slice(1);
@@ -379,6 +389,27 @@ export default function Index() {
             <CallButton />
             <a href={PHONE_HREF} className="font-display text-2xl text-foreground hover:text-gold transition-colors">{PHONE}</a>
           </div>
+          <div className="mt-8">
+            <p className="text-sm text-muted-foreground">Или напишите нам в мессенджер</p>
+            <div className="mt-4 flex flex-col items-center justify-center gap-3 sm:flex-row">
+              <a
+                href={WHATSAPP_HREF}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex w-56 items-center justify-center gap-2 rounded-full bg-[#25D366] px-6 py-3 font-medium text-white transition-transform hover:scale-[1.03]"
+              >
+                <Icon name="MessageCircle" size={18} /> WhatsApp
+              </a>
+              <button
+                type="button"
+                onClick={copyMax}
+                className="inline-flex w-56 items-center justify-center gap-2 rounded-full border border-gold/60 px-6 py-3 font-medium text-gold transition-colors hover:bg-gold/10"
+              >
+                <Icon name={maxCopied ? 'Check' : 'Send'} size={18} /> {maxCopied ? 'Номер скопирован' : 'Написать в MAX'}
+              </button>
+            </div>
+            <p className="mt-3 text-xs text-muted-foreground">MAX: {MOBILE} — найдите нас по номеру</p>
+          </div>
         </div>
       </section>
 
@@ -388,6 +419,16 @@ export default function Index() {
         <p className="mt-1 text-sm text-muted-foreground"><a href={PHONE_HREF} className="hover:text-gold">{PHONE}</a></p>
         <p className="mt-1 text-sm text-muted-foreground">© 2026 · Пространство тайского массажа и парения</p>
       </footer>
+
+      <a
+        href={WHATSAPP_HREF}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Написать в WhatsApp"
+        className="fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg shadow-black/40 transition-transform hover:scale-110"
+      >
+        <Icon name="MessageCircle" size={28} />
+      </a>
     </div>
   );
 }
